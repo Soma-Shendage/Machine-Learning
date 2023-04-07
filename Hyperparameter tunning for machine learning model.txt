@@ -1,0 +1,39 @@
+Hyperparameter tuning for Machine learning models
+The process of selecting the best hyperparameters to use is known as hyperparameter tuning, and the tuning process is also known as hyperparameter optimization.
+A hyperparameter is a parameter whose value is set before the learning process begins.
+Grid Search
+One traditional and popular way to perform hyperparameter tuning is by using an Exhaustive Grid Search from Scikit learn. This method tries every possible combination of each set of hyper-parameters. Using this method, we can find the best set of values in the parameter search space. This usually uses more computational power and takes a long time to run since this method needs to try every combination in the grid size.
+Randomized Search
+The main difference in the RandomizedSearch CV, when compared with GridCV, is that instead of trying every possible combination, this chooses the hyperparameter sample combinations randomly from grid space. Because of this reason, there is no guarantee that we will find the best result like Grid Search. But, this search can be extremely effective in practice as computational time is very less.
+
+1.Random Forest Hyperparameters we’ll be Looking at:
+max_depth
+min_sample_split
+max_leaf_nodes
+min_samples_leaf
+n_estimators
+max_sample (bootstrap sample)
+max_features
+
+Decision Tree Hyperparameters
+The decision tree hyperparameters are defined as the decision tree is a machine learning algorithm used for two tasks: classification and regression. In addition, the decision tree is used for building trees in ensemble learning algorithms, and the hyperparameter is a parameter in which its value is used to control the learning process. The decision tree has plenty of hyperparameters that need fine-tuning to derive the best possible model.
+max_depth. The name of hyperparameter max_depth is suggested the maximum depth that we allow the tree to grow to. ...
+min_samples_split. ...
+min_samples_leaf. ...
+max_features. ...
+min_weight_fraction_leaf. ...
+random_state. ...
+class_weigh
+
+
+SVM also has some hyper-parameters (like what C or gamma values to use) and finding optimal hyper-parameter is a very hard task to solve. But it can be found by just trying all combinations and see what parameters work best. The main idea behind it is to create a grid of hyper-parameters and just try all of their combinations (hence, this method is called Gridsearch, But don’t worry! we don’t have to do it manually because Scikit-learn has this functionality built-in with GridSearchCV.
+Use GridsearchCV
+One of the great things about GridSearchCV is that it is a meta-estimator. It takes an estimator like SVC and creates a new estimator, that behaves exactly the same – in this case, like a classifier. You should add refit=True and choose verbose to whatever number you want, the higher the number, the more verbose (verbose just means the text output describing the process.
+
+hyperparameters in logistic regression.
+Regularization type (e.g. L1, L2): Specifies the norm used in the penalization.
+Example:clf = LogisticRegression(penalty='l1')
+Maximum number of iterations: Maximum number of iterations taken for the solver to converge.
+           Example:clf = gisticRegression(max_iter=               1000)
+Convergence tolerance level: Used to determine the stopping criteria for the solver iterations.
+         Example:clf = LogisticRegression(tol=1e-4)
